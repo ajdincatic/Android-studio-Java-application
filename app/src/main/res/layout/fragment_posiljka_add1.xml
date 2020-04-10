@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".fragments.PosiljkaAdd1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Ime"
+        android:id="@+id/txtIme"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtIme"
+        android:id="@+id/editTxtIme"
+        android:focusable="false"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adresa"
+        android:id="@+id/txtPrezime"
+        android:layout_below="@+id/editTxtIme"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtPrezime"
+        android:id="@+id/viewAdresa"
+        android:focusable="false"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewAdresa"
+        android:text="odaberi primaoca"
+        android:id="@+id/btnPromijeniPrimaoca"
+        android:layout_marginTop="20sp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnPromijeniPrimaoca"
+        android:text="dalje"
+        android:id="@+id/btnDalje"
+        />
+
+</RelativeLayout>

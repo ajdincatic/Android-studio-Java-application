@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Posiljka</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bt_nova_posiljka_label">Nova pošiljka</string>
+    <string name="first_line_lable">First line</string>
+    <string name="second_line_lable">Second line</string>
+</resources>

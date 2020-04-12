@@ -61,7 +61,7 @@ public class PrimaocNoviDialogFragment extends android.app.DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_primaoc_novi, container, false);
+        View view = inflater.inflate(R.layout.dialog_primaoc_novi, container, false);
         view.findViewById(R.id.button_close).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +72,7 @@ public class PrimaocNoviDialogFragment extends android.app.DialogFragment {
 
         txtIme = view.findViewById(R.id.txtIme);
         txtPrezime = view.findViewById(R.id.txtPrezime);
-        spinnerOpstina = view.findViewById(R.id.spinnerOpstina);
+        spinnerOpstina = view.findViewById(R.id.spinner);
         view.findViewById(R.id.btnSnimi).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

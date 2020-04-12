@@ -9,9 +9,21 @@ public class KorisnikVM implements Serializable
 {
     private String ime;
     private String prezime;
+    private String username;
+    private String password;
     private OpstinaVM opstinaVM;
 
-    public KorisnikVM(String ime, String prezime, OpstinaVM opstinaVM) {
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public KorisnikVM(String username, String password, String ime, String prezime, OpstinaVM opstinaVM) {
+        this.username = username;
+        this.password = password;
         this.ime = ime;
         this.prezime = prezime;
         this.opstinaVM = opstinaVM;

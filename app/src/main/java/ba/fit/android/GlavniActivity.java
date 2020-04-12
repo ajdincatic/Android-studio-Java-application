@@ -1,13 +1,22 @@
 package ba.fit.android;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.AlarmClock;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.ShareCompat;
+import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -16,8 +25,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import java.io.IOException;
+
 import ba.fit.android.fragments.PosiljkaList;
 import ba.fit.android.helper.MyFragmentUtils;
+import ba.fit.android.helper.MySession;
 
 public class GlavniActivity extends AppCompatActivity {
 
@@ -66,4 +78,30 @@ public class GlavniActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    //private void setupDrawerContent(NavigationView navigationView) {
+    //    navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+    //        @Override
+    //        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+    //            int id = item.getItemId();
+//
+    //            if (id == R.id.nav_home) {
+    //                // Handle the home action
+    //            } else if (id == R.id.nav_gallery) {
+//
+    //            } else if (id == R.id.nav_slideshow) {
+//
+    //            }
+    //            else if (id == R.id.nav_logout) {
+    //                MySession.setKorisnik(null);
+    //                //startActivity(new Intent(this, LoginActivity.class));
+    //            }
+//
+    //            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+    //            drawer.closeDrawer(GravityCompat.START);
+    //            return true;
+    //        }
+    //    });
+    //}
+
 }

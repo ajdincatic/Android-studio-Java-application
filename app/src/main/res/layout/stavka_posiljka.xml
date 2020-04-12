@@ -1,26 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    >
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="88dp"
 
+    >
+    <ImageView
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:id="@+id/img"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/box"
+        />
     <TextView
+        android:layout_marginTop="16dp"
         android:id="@+id/txtFirstLine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="FirstLine"
+        android:layout_toRightOf="@id/img"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:text="@string/first_line_lable"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtSecondLine"
+        android:layout_below="@id/txtFirstLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SecondLine"
+        android:layout_toRightOf="@id/img"
+
+
         />
     <TextView
+        android:id="@+id/txtThirdLine"
+        android:layout_below="@id/txtSecondLine"
         android:layout_width="match_parent"
-        android:layout_below="@+id/txtFirstLine"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:id="@+id/txtSecondLine"
-        android:text="@string/second_line_lable"
+        android:text="ThirdLine"
+        android:layout_toRightOf="@id/img"
         />
-
+    <TextView
+        android:id="@+id/txtMeta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:text="TextView" />
 </RelativeLayout>

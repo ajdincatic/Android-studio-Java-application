@@ -15,6 +15,7 @@ public class MyFragmentUtils {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         // uvitavanje activitya
         fragmentTransaction.replace(id, fragment);
+        fragmentTransaction.addToBackStack(null);
         // potvrđujemo promjenu
         fragmentTransaction.commit();
     }

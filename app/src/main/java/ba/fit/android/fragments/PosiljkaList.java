@@ -17,6 +17,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.List;
 
 import ba.fit.android.R;
@@ -26,7 +28,7 @@ import ba.fit.android.helper.MyFragmentUtils;
 
 public class PosiljkaList extends Fragment {
 
-    private Button btnNovaPosiljka;
+    private FloatingActionButton btnNovaPosiljka;
     private ListView listViewPosiljke;
     private BaseAdapter adapter;
 
@@ -43,7 +45,7 @@ public class PosiljkaList extends Fragment {
 
         // dohvacamo elemente
         // svaki element na aktivnosti je view
-        btnNovaPosiljka = (Button) view.findViewById(R.id.btn_nova_posiljka);
+        btnNovaPosiljka = (FloatingActionButton) view.findViewById(R.id.btn_nova_posiljka);
         listViewPosiljke = (ListView) view.findViewById(R.id.list_posiljka);
 
         // ucitava podatke u listu
@@ -93,11 +95,15 @@ public class PosiljkaList extends Fragment {
 
                 TextView txtFirstLine = v.findViewById(R.id.txtFirstLine);
                 TextView txtSecondLine = v.findViewById(R.id.txtSecondLine);
+                TextView txtThirdLine = v.findViewById(R.id.txtThirdLine);
+                TextView txtMeta = v.findViewById(R.id.txtMeta);
 
                 // uzimamo jednu posiljku iz liste i smjestamo u textview
                 PosiljkaVM x = podaci.get(position);
                 txtFirstLine.setText(x.primaoc.getImePrezime());
                 txtSecondLine.setText(x.primaoc.getOpstinaVM().toString());
+                txtThirdLine.setText(x.masa +"kg");
+                txtMeta.setText("Broj pošiljke: "+x.brojPosiljke);
 
                 // vraca se view koji predstavlja 1 clan liste
                 return v;

@@ -8,24 +8,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import java.util.List;
 
 import ba.fit.android.R;
 import ba.fit.android.data.KorisnikVM;
-import ba.fit.android.data.PosiljkaVM;
 import ba.fit.android.data.Storage;
+import ba.fit.android.helper.MyFragmentUtils;
 import ba.fit.android.helper.MyRunnable;
 
 public class PretragaDialog extends DialogFragment {
 
     private static final String MY_KEY = "MojKey";
-    private EditText text;
-    private Button btn;
+    private SearchView searchView;
     private ListView lv;
     private MyRunnable<KorisnikVM> callback;
 
@@ -53,27 +51,55 @@ public class PretragaDialog extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_pretraga_dialog, container, false);
+        View view = inflater.inflate(R.layout.dialog_pretraga, container, false);
 
-        text = view.findViewById(R.id.editText);
-        btn = view.findViewById(R.id.btnTrazi);
         lv = view.findViewById(R.id.listViewPretraga);
-        // ucitavamo listu
-        LoadListView(null);
-
-        btn.setOnClickListener(new View.OnClickListener() {
+        searchView = view.findViewById(R.id.editText);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public void onClick(View v) {
-                btnPretragaClick();
+            public boolean onQueryTextSubmit(String query) {
+                btnPretragaClick(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                btnPretragaClick(query);
+                return false;
             }
         });
+        searchView.setIconifiedByDefault(false);
+
+        view.findViewById(R.id.btnNovi).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                do_btnNovi();
+            }
+        });
+        view.findViewById(R.id.button_close).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                do_btnClose();
+            }
+        });
+
+        // ucitavamo listu
+        LoadListView(null);
 
         return view;
     }
 
-    private void btnPretragaClick() {
-        String val = text.getText().toString();
-        LoadListView(val);
+    private void do_btnClose() {
+        dismiss();
+    }
+
+    private void do_btnNovi() {
+        getDialog().dismiss();
+        MyFragmentUtils.openAsDialog(getActivity(), PrimaocNoviDialogFragment.newInstance(callback));
+    }
+
+    private void btnPretragaClick(String query) {
+        LoadListView(query);
     }
 
     private void LoadListView(String val) {

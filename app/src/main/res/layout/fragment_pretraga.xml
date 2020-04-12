@@ -6,21 +6,14 @@
     android:padding="10dp"
     >
 
-    <EditText
+    <SearchView
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textNoSuggestions|textVisiblePassword"
         android:hint="Ime"
         android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@+id/btnTrazi"
         android:text="" />
-    <Button
-        android:id="@+id/btnTrazi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Trazi"
-        android:layout_alignParentRight="true"/>
 
     <ListView
         android:layout_below="@id/editText"

@@ -72,9 +72,22 @@ public class GlavniActivity extends AppCompatActivity {
         return true;
     }
 
+    private void do_btnLogoutClick() {
+        MySession.setKorisnik(null);
+        startActivity(new Intent(this, LoginActivity.class));
+    }
+
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+
+        findViewById(R.id.action_logout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                do_btnLogoutClick();
+            }
+        });
+
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }

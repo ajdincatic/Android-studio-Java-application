@@ -36,7 +36,7 @@ public class Storage {
         if (korisnici == null)
         {
             korisnici = new ArrayList<>();
-            korisnici.add(new KorisnikVM("emina", "test","Emina", "Obradovic", getOpstine().get(0)));
+            korisnici.add(new KorisnikVM("test", "test","Emina", "Obradovic", getOpstine().get(0)));
             korisnici.add(new KorisnikVM("adil", "test","Adil", "Joldic", getOpstine().get(7)));
             korisnici.add(new KorisnikVM("larisa", "test","Larisa", "Dedović", getOpstine().get(7)));
             korisnici.add(new KorisnikVM("elmin", "test","Elmin", "Sudic", getOpstine().get(5)));
